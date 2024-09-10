@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万搜网-搜索引擎大全</title>
+    <link href="./js/bootstrap.min.css" rel="stylesheet" >
+    <!-- 引入favicon.ico -->
+    <link rel="icon" href="./imgs/favicon.ico" type="image/x-icon"></link>
+
+    <style>
+        .myinputform{
+            background: 0 0;
+            margin-top: 13px;
+            border: 2px solid #4E6EF2;
+        }
+        .myinputform:focus{
+            color:#495057;
+            background-color:#fff;
+            border-color:#80bdff;
+            outline:0;
+            box-shadow:0 0 0 .2rem rgba(0,123,255,.25)
+        }
+        .myinputform::-webkit-input-placeholder{
+            color:#6c757d;opacity:1
+        }
+        .myinputform::-moz-placeholder{
+            color:#6c757d;opacity:1
+        }
+        .myinputform:-ms-input-placeholder{
+            color:#6c757d;opacity:1
+        }
+        .myinputform::-ms-input-placeholder{
+            color:#6c757d;
+            opacity:1
+        }
+        .myinputform::placeholder{
+            color:#6c757d;
+            opacity:1
+            }
+        .ssk{
+            margin-top: 10px;
+        }
+        .img1{
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- logo -->
+        <table width="10%" border="0" align="center"> 
+    <tbody>
+     <tr height="0"> 
+      <td width="159" valign="top" height="69"><a href="http://www.quanso.com.cn/"><img width="310" src="./imgs/wansoulogo.png" border="0" title="中文搜索引擎大全，好工具就要收藏和分享~"></a></td> 
+     </tr>
+    </tbody>
+   </table>
+
+        <table width="700" height="319" border="0" align="center"> 
+   <tbody>
+    <!-- baidu search -->
+   <tr >
+  	<form action="http://www.baidu.com/baidu?" target="_blank">
+    <td width="117" height="30" style="text-align:center;"><a href="http://www.baidu.com/" target="_blank"><img style="vertical-align:middle;" src="./imgs/baidu1.jpg" alt="百度搜索" width="117" height="38" border="0"></a></td>  
+    <td width="244" valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="word"></td>
+    <td width="91" valign="center"><input style="width:100px;height:35px;font-size:14px" class="ssk btn btn-primary" value="百度一下" type="submit">&nbsp;</td>
+</form>
+  </tr>
+  <!-- 360 search -->
+  <tr>
+  	<form action="http://www.so.com/s" target="_blank">
+    <td height="60" valign="middle" style="text-align:center;"><a href="http://www.so.com/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/360.jpg" alt="360搜索" width="117" height="38" border="0"></a></td>
+    <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="q"></td>
+    <td width="91" valign="middle"><input style="width:100px;height:35px;font-size:14px" class="ssk btn btn-success" value="好搜一下" type="submit">&nbsp;</td>
+</form>
+  </tr>
+  <!-- bing search -->
+  <tr>
+  	<form action="http://cn.bing.com/search?q=" target="_blank">
+    <td height="50" valign="middle"><a href="http://cn.bing.com/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/bing.jfif" alt="必应搜索" width="117" height="38" border="0"></a></td>
+    <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="q"></td>
+    <td width="91" valign="middle"><input style="width:100px;height:35px;font-size:14px" class="ssk btn btn-warning" value="必应搜索" type="submit">&nbsp;</td>
+</form>
+</tr>
+<!-- CSDN search -->
+<tr>
+    <form action="https://so.csdn.net/so/search?spm=1000.2115.3001.4498&q=" target="_blank">
+  <td height="50" valign="middle"><a href="https://so.csdn.net/so/search" target="_blank"><img class="img1" style="vertical-align:middle; height: 44px;" src="./imgs/csdn.png" alt="CSDN搜索" width="117" height="38" border="0"></a></td>
+  <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="q"></td>
+  <td width="91" valign="middle"><input style="width:100px;height:35px;font-size:14px" class="ssk btn btn-info" value="CSDN搜索" type="submit">&nbsp;</td>
+</form>
+</tr>
+<!-- 稀土掘金 search -->
+<tr>
+    <form action="https://juejin.cn/search?query=" target="_blank">
+  <td height="50" valign="middle"><a href="https://juejin.cn/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/xtjj.svg" alt="稀土掘金" width="117" height="38" border="0"></a></td>
+  <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="query"></td>
+  <td width="91" valign="middle"><input style="width:100px;height:35px;font-size:14px" class="ssk btn btn-primary" value="稀土掘金" type="submit">&nbsp;</td>
+</form>
+</tr>
+<!-- wechat search -->
+<tr>
+	<form action="http://weixin.sogou.com/weixin?type=2" target="_blank" style="margin: 0; padding: 0">
+	<td height="50" valign="middle"><a href="http://weixin.sogou.com/" target="_blank">
+	<img class="img1" border="0" src="./imgs/weixin1.jpg" width="117" height="38" alt="微信搜索：微信公众号，精彩内容独家收录，一搜即达"></a></td>
+   <td valign="middle">&nbsp;<input class="myinputform" size="38" name="query" style="width:420px; height:28px"></td>
+   <td width="91" valign="middle">
+   <input type="submit" class="ssk btn btn-danger" value="微信搜索" name="sogou_submit" style="width:100px;height:35px;font-size:14px">&nbsp;</td>
+</form>
+</tr>
+<!-- sogou search -->
+  <tr>
+  	<form action="http://www.sogou.com/web?" target="_blank">
+    <td height="50" valign="middle"><a href="http://www.sogou.com/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/sogou.jfif" alt="搜狗搜索" width="117" height="38" border="0"></a></td>
+    <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="query"></td>
+    <td width="91" valign="middle"><input class="ssk btn btn-info" style="width:100px;height:35px;font-size:14px" value="搜狗搜索" type="submit">&nbsp;</td>
+</form>
+  </tr>
+  <!-- tencent soso search -->
+  <tr>
+  	<form action="http://www.soso.com/q?" target="_blank">
+    <td height="50" valign="middle"><a href="http://www.soso.com/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/soso.jpg" alt="soso搜索" width="117" height="38" border="0"></a></td>
+    <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="w"></td>
+    <td width="91" valign="middle"><input class="ssk btn btn-primary" style="width:100px;height:35px;font-size:14px" value="腾讯搜索" type="submit">&nbsp;</td>
+</form>
+  </tr>
+  <!-- youdao search -->
+  <tr>
+  	<form action="http://www.youdao.com/result?" target="_blank">
+    <td height="50" valign="middle"><a href="http://www.youdao.com/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/youdao.jfif" alt="有道搜索" width="117" height="38" border="0"></a></td>
+    <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="word&lang=en"></td>
+    <td width="91" valign="middle"><input class="ssk btn btn-success" style="width:100px;height:35px;font-size:14px" value="有道搜索" type="submit">&nbsp;</td>
+</form>
+  </tr>
+  
+
+   </tbody>
+  </table>
+    </div>
+</body>
+</html>

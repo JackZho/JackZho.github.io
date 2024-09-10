@@ -6,9 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>万搜网-搜索引擎大全</title>
     <link href="./js/bootstrap.min.css" rel="stylesheet" >
-    <!-- 设置标签图片为 favicon.ico -->
-    <link rel="shortcut icon" href="./imgs/favicon.ico" type="image/x-icon"></link>
+    <!-- 引入favicon.ico -->
+    <link rel="icon" href="./imgs/favicon.ico" type="image/x-icon"></link>
     <style>
+      .drop1{
+        width: 420px;
+        height: 28px;
+        position:absolute;
+        left: 133px;
+        /* right: 1px; */
+        bottom: 17px;
+        z-index: 9999;
+        
+      }
+      .drop1>a{
+        color: #9195a3;
+        font:400 12px / 45px MicrosoftYaHei;
+      }
         .myinputform{
             background: 0 0;
             margin-top: 13px;
@@ -45,15 +59,59 @@
             margin-top: 10px;
         }
 
+        /* 百度下拉搜索菜单 */
+        .dropdown-menu{
+          display:block;
+        }
+        .mydropmenu{
+          display: none;
+          position: relative;
+          right: -4.7px;
+          top: -4.5px;
+          background-color: #ffff;
+          border-radius: 0 0 10px 10px;
+          border: 2px solid #4E6EF2;
+          border-top: 0;
+          list-style: none;
+          width: 44px!important;
+          margin-right: 20px;
+        }
+        .mydropmenu>p{
+          cursor: pointer;
+        color: #9195a3;
+          /* 设置字体样式为微软雅黑 */
+        font-size: 13px;
+        padding: 0;
+        margin:0;
+       }
+       .mydropmenu>p:hover{
+        background-color: #f5f5f6;
+       }
+        
+       /* 下拉文字 */
+       .droptext{
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+        top:7px;
+        right: -14px;
+       }
+       #baiduinput{
+        margin-left: 42px;
+       }
+    #more:hover{
+      border-radius: 0 0 10px 10px;
+    }
     </style>
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="container container-md container-sm container-fluid">
         <!-- logo -->
         <table width="10%" border="0" align="center"> 
     <tbody>
      <tr height="0"> 
-      <td width="159" valign="top" height="69"><a href="http://www.quanso.com.cn/"><img width="310" src="./imgs/wansoulogo.png" border="0" title="中文搜索引擎大全，好工具就要收藏和分享~"></a></td> 
+      <!-- a标签中使href设置为 javascript:void(0); 点击该标签时地址栏不会有变化-->
+      <td width="159" valign="top" height="69"><a href="javascript:void(0);"><img width="310" src="./imgs/wansoulogo.png" border="0" title="中文搜索引擎大全，好工具就要收藏和分享~"></a></td> 
      </tr>
     </tbody>
    </table>
@@ -61,18 +119,33 @@
         <table width="700" height="319" border="0" align="center"> 
    <tbody>
     <!-- baidu search -->
-   <tr >
-  	<form action="http://www.baidu.com/baidu?" target="_blank">
+   <tr style="position:relative">
+  	<form id="baidu" action="http://www.baidu.com/baidu?" target="_blank">
     <td width="117" height="30" style="text-align:center;"><a href="http://www.baidu.com/" target="_blank"><img style="vertical-align:middle;" src="./imgs/baidu1.jpg" alt="百度搜索" width="117" height="38" border="0"></a></td>  
-    <td width="244" valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="word"></td>
-    <td width="91" valign="center"><input style="width:100px;height:35px;font-size:14px" class="ssk btn btn-primary" value="百度一下" type="submit">&nbsp;</td>
+    <td width="244" valign="middle">&nbsp;
+      <div class="drop1">
+      <a class="droptext "  aria-expanded="true">网页∨</a>
+  <div class="mydropmenu">
+    <p id="web">&nbsp;&nbsp;网页</p>
+    <p id="wk">&nbsp;&nbsp;文库</p>
+    <p id="vd">&nbsp;&nbsp;视频</p>
+    <p id="pic">&nbsp;&nbsp;图片</p>
+    <p id="tieba">&nbsp;&nbsp;贴吧</p>
+    <p id="zd">&nbsp;&nbsp;知道</p>
+    <p id="news">&nbsp;&nbsp;新闻</p>
+    <p id="map">&nbsp;&nbsp;地图</p>
+    <p id="more">&nbsp;&nbsp;更多</p>
+  </div>
+</div>
+      <input id="baiduinput" class="myinputform" style="width:378px; height:28px" name="word"></td>
+    <td width="91" valign="center"><input style="width:100px;height:35px;font-size:14px" id="baidubtn" class="ssk btn btn-primary" value="百度一下" type="submit">&nbsp;</td>
 </form>
   </tr>
   <!-- 360 search -->
   <tr>
   	<form action="http://www.so.com/s" target="_blank">
     <td height="60" valign="middle" style="text-align:center;"><a href="http://www.so.com/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/360.jpg" alt="360搜索" width="117" height="38" border="0"></a></td>
-    <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="q"></td>
+    <td valign="middle">&nbsp;<input class="myinputform" style="margin-left: 5px; width:420px; height:28px" name="q"></td>
     <td width="91" valign="middle"><input style="width:100px;height:35px;font-size:14px" class="ssk btn btn-success" value="好搜一下" type="submit">&nbsp;</td>
 </form>
   </tr>
@@ -80,7 +153,7 @@
   <tr>
   	<form action="http://cn.bing.com/search?q=" target="_blank">
     <td height="50" valign="middle"><a href="http://cn.bing.com/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/bing.jfif" alt="必应搜索" width="117" height="38" border="0"></a></td>
-    <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="q"></td>
+    <td valign="middle">&nbsp;<input class="myinputform" style="margin-left: 5px; width:420px; height:28px" name="q"></td>
     <td width="91" valign="middle"><input style="width:100px;height:35px;font-size:14px" class="ssk btn btn-warning" value="必应搜索" type="submit">&nbsp;</td>
 </form>
 </tr>
@@ -88,7 +161,7 @@
 <tr>
     <form action="https://so.csdn.net/so/search?spm=1000.2115.3001.4498&q=" target="_blank">
   <td height="50" valign="middle"><a href="https://so.csdn.net/so/search" target="_blank"><img class="img1" style="vertical-align:middle; height: 44px;" src="./imgs/csdn.png" alt="CSDN搜索" width="117" height="38" border="0"></a></td>
-  <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="q"></td>
+  <td valign="middle">&nbsp;<input class="myinputform" style="margin-left: 5px; width:420px; height:28px" name="q"></td>
   <td width="91" valign="middle"><input style="width:100px;height:35px;font-size:14px" class="ssk btn btn-info" value="CSDN搜索" type="submit">&nbsp;</td>
 </form>
 </tr>
@@ -96,7 +169,7 @@
 <tr>
     <form action="https://juejin.cn/search?query=" target="_blank">
   <td height="50" valign="middle"><a href="https://juejin.cn/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/xtjj.svg" alt="稀土掘金" width="117" height="38" border="0"></a></td>
-  <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="query"></td>
+  <td valign="middle">&nbsp;<input class="myinputform" style="margin-left: 5px; width:420px; height:28px" name="query"></td>
   <td width="91" valign="middle"><input style="width:100px;height:35px;font-size:14px" class="ssk btn btn-primary" value="稀土掘金" type="submit">&nbsp;</td>
 </form>
 </tr>
@@ -105,7 +178,7 @@
 	<form action="http://weixin.sogou.com/weixin?type=2" target="_blank" style="margin: 0; padding: 0">
 	<td height="50" valign="middle"><a href="http://weixin.sogou.com/" target="_blank">
 	<img class="img1" border="0" src="./imgs/weixin1.jpg" width="117" height="38" alt="微信搜索：微信公众号，精彩内容独家收录，一搜即达"></a></td>
-   <td valign="middle">&nbsp;<input class="myinputform" size="38" name="query" style="width:420px; height:28px"></td>
+   <td valign="middle">&nbsp;<input class="myinputform" size="38" name="query" style="margin-left: 5px; width:420px; height:28px"></td>
    <td width="91" valign="middle">
    <input type="submit" class="ssk btn btn-danger" value="微信搜索" name="sogou_submit" style="width:100px;height:35px;font-size:14px">&nbsp;</td>
 </form>
@@ -114,7 +187,7 @@
   <tr>
   	<form action="http://www.sogou.com/web?" target="_blank">
     <td height="50" valign="middle"><a href="http://www.sogou.com/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/sogou.jfif" alt="搜狗搜索" width="117" height="38" border="0"></a></td>
-    <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="query"></td>
+    <td valign="middle">&nbsp;<input class="myinputform" style="margin-left: 5px; width:420px; height:28px" name="query"></td>
     <td width="91" valign="middle"><input class="ssk btn btn-info" style="width:100px;height:35px;font-size:14px" value="搜狗搜索" type="submit">&nbsp;</td>
 </form>
   </tr>
@@ -122,7 +195,7 @@
   <tr>
   	<form action="http://www.soso.com/q?" target="_blank">
     <td height="50" valign="middle"><a href="http://www.soso.com/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/soso.jpg" alt="soso搜索" width="117" height="38" border="0"></a></td>
-    <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="w"></td>
+    <td valign="middle">&nbsp;<input class="myinputform" style="margin-left: 5px; width:420px; height:28px" name="w"></td>
     <td width="91" valign="middle"><input class="ssk btn btn-primary" style="width:100px;height:35px;font-size:14px" value="腾讯搜索" type="submit">&nbsp;</td>
 </form>
   </tr>
@@ -130,7 +203,7 @@
   <tr>
   	<form action="http://www.youdao.com/result?" target="_blank">
     <td height="50" valign="middle"><a href="http://www.youdao.com/" target="_blank"><img class="img1" style="vertical-align:middle;" src="./imgs/youdao.jfif" alt="有道搜索" width="117" height="38" border="0"></a></td>
-    <td valign="middle">&nbsp;<input class="myinputform" style="width:420px; height:28px" name="word&lang=en"></td>
+    <td valign="middle">&nbsp;<input class="myinputform" style="margin-left: 5px; width:420px; height:28px" name="word&lang=en"></td>
     <td width="91" valign="middle"><input class="ssk btn btn-success" style="width:100px;height:35px;font-size:14px" value="有道搜索" type="submit">&nbsp;</td>
 </form>
   </tr>
@@ -140,4 +213,195 @@
   </table>
     </div>
 </body>
+
+<script>
+
+// 分类判断开关
+let p = 0;
+// 分类搜索菜单开关
+let openNum = 1;
+
+// 分类开关数字
+/*
+  关闭搜索 p = 4
+  地图 p = 3
+  视频 p = 5
+  新闻 p = 6
+  图片 p = 7
+  音乐 p = 8
+
+*/
+
+ // 封装函数-隐藏百度分类搜索的div
+ function hiddenUL(){
+    document.querySelector('.mydropmenu').style.display = 'none';
+  }
+
+// 鼠标失焦后隐藏ul
+// document.querySelector('.mydropmenu').onmouseleave = function(){
+//     hiddenUL()
+//   }
+ // 给 .mydropmenu 添加一个鼠标失焦事件，鼠标失焦后alert(111)
+ document.querySelector('.drop1').onmouseleave = function(){
+    hiddenUL();
+    openNum=1;
+  }  
+
+  // 点击弹出分类搜索菜单
+  document.querySelector('.droptext ').onclick = function(){
+    openNum++;
+    openNum % 2 != 0? hiddenUL() : document.querySelector('.mydropmenu').style.display = 'block';
+    
+  }
+  // 百度分类搜索子菜单点击事件
+  document.querySelectorAll('.mydropmenu p').onclick=()=>{
+    openNum++;
+    // this.onclick();
+    openNum % 2 == 0? hiddenUL() : document.querySelector('.mydropmenu').style.display = 'block';
+  }
+  
+
+  
+
+  // 百度文库搜索
+  // 给id为wk添加点击事件，js将id为baidu的form的action地址改为“”
+  document.getElementById("wk").onclick = function(){
+    p = 4;
+    hiddenUL();
+    document.getElementById("baidu").action = "https://wenku.baidu.com/search?lm=0&od=0&ie=utf-8&H123Tmp=nunew7&word=";
+    // id为baiduinput的input的name改为“word”
+    document.getElementById("baiduinput").name = "word";
+    document.querySelector('.droptext').innerHTML="文库∨"
+    openNum++;
+  }
+
+  // 网页搜索
+  // 给id为web添加点击事件，js将id为baidu的form的action地址改为“”
+document.getElementById("web").onclick = function(){
+    openNum++;
+    p = 4;
+    hiddenUL();
+    document.getElementById("baidu").action = "https://www.baidu.com/s?word=";
+    // id为baiduinput的input的name改为“word”
+    document.getElementById("baiduinput").name = "word";
+    document.querySelector('.droptext').innerHTML="网页∨"
+  }
+
+// 给id为vd添加点击事件，js将id为baidu的form的action地址改为“”
+document.getElementById("vd").onclick = function(){
+    p = 5;
+// document.querySelector('#web').removeEventListener('onclick');
+    hiddenUL();
+    document.querySelector('.droptext').innerHTML="视频∨";
+    // 获取id为baidubtn的按钮
+    openNum++;
+    if (p==5){
+  document.querySelector('#baidubtn').onclick=(e)=>{
+    if(p!=4&&p!=3&&p!=6&&p!=7&&p!=8){
+    console.log("vd-",p);
+    
+      e.preventDefault();
+      let wd = document.querySelector('#baiduinput').value;
+      window.open(`https://www.baidu.com/sf/vsearch?pd=video&word=${wd}`);
+    }
+  }
+  }
+  }
+
+  // 给id为pic添加点击事件，js将id为baidu的form的action地址改为“”
+document.getElementById("pic").onclick = function(){
+    p = 7;
+    hiddenUL();
+    openNum++;
+    document.querySelector('.droptext').innerHTML="图片∨"
+    if(p==7){
+      document.querySelector('#baidubtn').onclick=(e)=>{
+        if(p!=4&&p!=5&&p!=6&&p!=3&&p!=8){
+        console.log("pic-",p);
+        
+          e.preventDefault();
+          let wd = document.querySelector('#baiduinput').value;
+          window.open(`https://image.baidu.com/search/index?tn=baiduimage&fm=result&ie=utf-8&word=${wd}`)
+        }
+      }
+    }
+  
+  }
+
+    // 贴吧搜索
+    // 给id为tieba添加点击事件，js将id为baidu的form的action地址改为“”
+document.getElementById("tieba").onclick = function(){
+    p = 4;
+    hiddenUL();
+    document.getElementById("baidu").action = "https://tieba.baidu.com/f?kw=";
+    // id为baiduinput的input的name改为“kw”
+    document.getElementById("baiduinput").name = "kw";
+    document.querySelector('.droptext').innerHTML="贴吧∨"
+    openNum++;
+  }
+
+    // 百度知道搜索
+  // 给id为zd添加点击事件，js将id为baidu的form的action地址改为“”
+document.getElementById("zd").onclick = function(){
+    p = 4;
+    hiddenUL();
+    document.getElementById("baidu").action = "https://zhidao.baidu.com/search?ct=17&pn=0&tn=ikaslist&rn=10&word=";
+    // id为baiduinput的input的name改为“kw”
+    document.getElementById("baiduinput").name = "word";
+    document.querySelector('.droptext').innerHTML="知道∨"
+    openNum++;
+  }
+
+// 新闻搜索
+// 给id为news添加点击事件，js将id为baidu的form的action地址改为“”
+document.getElementById("news").onclick = function(){
+  p = 6;
+  // 移除id为"baiduinput"的id为“mapbtn"的点击事件
+  // document.querySelector('#mapbtn').removeEventListener('click');
+    openNum++;
+    hiddenUL();
+    document.querySelector('.droptext').innerHTML="新闻∨"
+    if(p==6){
+    document.querySelector('#baidubtn').onclick = function(e){
+      if(p!=4&&p!=5&&p!=3&&p!=7&&p!=8){
+      e.preventDefault();
+      let wd = document.querySelector('#baiduinput').value;
+      window.open(`https://www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&rsv_dl=ns_pc&word=${wd}`);
+    }
+  }
+  
+  }
+  }
+
+// 地图搜索
+// 给id为map添加点击事件，js将id为baidu的form的action地址改为“”
+document.getElementById("map").onclick = function(){
+    p = 3;
+    openNum++;
+    hiddenUL();
+    document.querySelector('.droptext').innerHTML="地图∨"
+    if(p==3){
+    document.querySelector('#baidubtn').onclick=function(e){
+      if(p!=4&&p!=5&&p!=6&&p!=7&&p!=8){
+      e.preventDefault();
+      let wd = document.querySelector('#baiduinput').value;
+      window.open(`https://map.baidu.com/search/${wd}@12672376.8410336,4754212.73499996,7.37z?querytype=s&wd=${wd}&c=268&pn=0&device_ratio=2&da_src=shareurl`);
+
+    }
+  }
+  }
+  }  
+  
+  // 更多
+// 给id为more添加点击事件
+document.getElementById("more").onclick = function(){
+    hiddenUL();
+    window.open(`https://www.baidu.com/more/`);
+    openNum++;
+}
+
+ 
+  
+  
+</script>
 </html>
