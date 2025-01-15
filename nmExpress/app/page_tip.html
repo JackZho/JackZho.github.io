@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>提醒事项</title>
+    <link rel="stylesheet" type="text/css" href="../res/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/pageIndex.css">
+</head>
+<style>
+    .lia {
+        height: 49px;
+        border-bottom: 1px solid rgba(0, 0, 0, .125) !important;
+    }
+    
+    #t1 {
+        border-bottom: 1px solid rgba(0, 0, 0, .125);
+    }
+</style>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">提醒事项</li>
+        </ol>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-auto">
+                <!--bootstrap实现弹出模态框-->
+                <button class="btn btn-primary" data-target="#myModal" data-toggle="modal">新增</button>
+                <button class="btn btn-danger " id="clearthing">全部清空</button>
+
+                <!--fade 淡入淡出-->
+                <div class="modal  fade" id="myModal" aria-labelledby="myModallabel " aria-hidden="true " tabindex="-1 ">
+                    <div class="modal-dialog ">
+                        <div class="modal-content ">
+                            <div class="modal-header ">
+                                <h5 class="modal-title" id="myModallabel ">新增提醒事项</h5>
+                            </div>
+                            <form id="formData " class="form-horizontal ">
+                                <div class="modal-body ">
+                                    <form>
+
+                                        <div class="form-group row">
+
+                                            <div class="col-sm-12 text-center">
+                                                <input type="text" class="form-control" id="thing6">
+                                            </div>
+                                        </div>
+
+
+                                    </form>
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button class="btn btn-danger" type="button" data-dismiss="modal" id="closeBtn">关闭</button>
+                                    <button class="btn btn-success" id="adthing" type="button" onclick=" ">提交</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-8">
+                <ul class="list-group list-group-flush text-center">
+                    <li class="list-group-item " id="t1">8:00分拣6号柜快递</li>
+                    <li class="list-group-item " id="t1">10:00分拣8号柜快递</li>
+                    <li class="list-group-item " id="t1">13:00分拣9号柜快递</li>
+                    <li class="list-group-item " id="t1">15:00分拣12号柜快递</li>
+                </ul>
+            </div>
+            <div class="col-4 ">
+                <ul class="list-group list-group-flush text-center ">
+                    <li class="list-group-item lia"><button class="btn btn-primary upBtn">修改</button><button class="btn btn-danger delBtn">删除</button></li>
+                    <li class="list-group-item lia"><button class="btn btn-primary upBtn">修改</button><button class="btn btn-danger delBtn">删除</button></li>
+                    <li class="list-group-item lia"><button class="btn btn-primary upBtn">修改</button><button class="btn btn-danger delBtn">删除</button></li>
+                    <li class="list-group-item lia"><button class="btn btn-primary upBtn">修改</button><button class="btn btn-danger delBtn">删除</button></li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript " src="../res/js/plug/jquery-3.2.1.slim.min.js "></script>
+    <script src="../res/js/plug/bootstrap.bundle.min.js "></script>
+    <script type="text/javascript " src="../res/js/plug/echarts.common.min.js "></script>
+    <script type="text/javascript " src="../res/js/work/pageIndex.js "></script>
+    <script>
+        // 获取左侧待办事项ul
+        let mainthing = document.querySelectorAll("ul")[0];
+        let rightBtn = document.querySelectorAll("ul")[1];
+
+        // 获取添加内容
+        let addText = document.querySelector("#thing6");
+
+        // 获取待办事项、功能按钮
+        let allThing = document.querySelectorAll('#t1');
+        let lia = document.querySelectorAll('.lia');
+        // 获取添加按钮
+        let adthing = document.querySelector("#adthing");
+
+        const getLength = () => {
+            // 使用localStorage存储代办事项的长度。
+            let thingLength = allThing.length;
+            localStorage.setItem('tLength', thingLength);
+        }
+
+        getLength();
+
+
+        adthing.onclick = () => {
+                // 获取左侧待办事项ul
+                let mainthing = document.querySelectorAll("ul")[0];
+                let rightBtn = document.querySelectorAll("ul")[1];
+
+                // 获取添加内容
+                let addText = document.querySelector("#thing6");
+                if (addText.value === '') {
+                    alert('输入的内容不能为空！');
+                    return;
+                }
+                // 获取待办事项、功能按钮
+                let allThing = document.querySelectorAll('#t1');
+                let lia = document.querySelectorAll('.lia');
+                // 获取添加按钮
+                let adthing = document.querySelector("#adthing");
+
+                // 自定义左侧li元素
+                let ele = document.createElement("li");
+                // 自定义右侧li元素
+                let ele1 = document.createElement('li');
+                // 左侧内容
+                ele.className = "list-group-item";
+                ele.setAttribute('id', 't1');
+                ele.innerText = addText.value;
+                mainthing.appendChild(ele);
+
+                // 右侧按钮
+                ele1.className = 'list-group-item lia';
+                ele1.innerHTML = `<button class="btn btn-primary upBtn">修改</button><button class="btn btn-danger delBtn">删除</button>`;
+                rightBtn.appendChild(ele1);
+
+                upThis();
+                delThis();
+                getLength();
+
+            }
+            // 获取全部清空按钮
+        let clearthing = document.querySelector("#clearthing");
+        clearthing.onclick = () => {
+                // 获取左侧待办事项ul
+                let mainthing = document.querySelectorAll("ul")[0];
+                let rightBtn = document.querySelectorAll("ul")[1];
+
+                // 获取添加内容
+                let addText = document.querySelector("#thing6");
+
+
+                // 获取待办事项、功能按钮
+                allThing = document.querySelectorAll('#t1');
+                lia = document.querySelectorAll('.lia');
+                // 获取添加按钮
+                adthing = document.querySelector("#adthing");
+
+                leftL = mainthing.getElementsByTagName("li").length;
+                allThing = document.querySelectorAll('#t1');
+                lia = document.querySelectorAll('.lia');
+                for (let i = 0; i < leftL; i++) {
+                    allThing[i].remove();
+                    lia[i].remove();
+                }
+
+                upThis();
+                delThis();
+                getLength();
+            }
+            // 获取修改按钮
+        function upThis() {
+            // 获取左侧待办事项ul
+            let mainthing = document.querySelectorAll("ul")[0];
+            let rightBtn = document.querySelectorAll("ul")[1];
+
+            // 获取添加内容
+            let addText = document.querySelector("#thing6");
+
+            // 获取待办事项、功能按钮
+            allThing = document.querySelectorAll('#t1');
+            lia = document.querySelectorAll('.lia');
+            // 获取添加按钮
+            adthing = document.querySelector("#adthing");
+
+            let upBtn = document.querySelectorAll(".upBtn");
+            for (let i in upBtn) {
+                upBtn[i].onclick = () => {
+                    function a() {
+                        let uptext = prompt('请输入修改后的信息', '');
+                        if (uptext != null) {
+                            allThing[i].innerHTML = `${uptext}`;
+                        }
+                    }
+                    a();
+
+                }
+            }
+        };
+        upThis();
+        // 获取删除按钮
+        function delThis() {
+
+            // 获取左侧待办事项ul
+            let mainthing = document.querySelectorAll("ul")[0];
+            let rightBtn = document.querySelectorAll("ul")[1];
+
+            // 获取添加内容
+            let addText = document.querySelector("#thing6");
+
+            // 获取待办事项、功能按钮
+            allThing = document.querySelectorAll('#t1');
+            lia = document.querySelectorAll('.lia');
+            // 获取添加按钮
+            adthing = document.querySelector("#adthing");
+
+            delBtn = document.querySelectorAll(".delBtn");
+            for (let i in delBtn) {
+                delBtn[i].onclick = () => {
+                    allThing[i].remove();
+                    lia[i].remove();
+                    allThing = document.querySelectorAll('#t1');
+                    let thingLength = allThing.length;
+                    localStorage.setItem('tLength', thingLength);
+                }
+
+            }
+        }
+        delThis();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>数据查询</title>
+    <link rel="stylesheet" type="text/css" href="../res/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/pageIndex.css">
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">订单查询</li>
+        </ol>
+    </nav>
+    <div class="container-fluid">
+        <div class="row mb-4 pt-2">
+            <div class="col-12">
+                <form>
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <label class="sr-only" for="indentCode">订单编号</label>
+                            <input type="text" class="form-control mb-2" id="indentCode" placeholder="请输入订单编号">
+                        </div>
+
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary mb-2" id="searchCode">搜索</button>
+                            <button type="button" class="btn btn-primary mb-2">添加客户订单</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped table-bordered table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">订单编号</th>
+                            <th scope="col">货物名称</th>
+                            <th scope="col">货物数量</th>
+                            <th scope="col">运输方式</th>
+                            <th scope="col">收货人</th>
+                            <th scope="col">电话</th>
+                            <th scope="col">收货地址</th>
+                            <th scope="col">预发时间</th>
+                            <th scope="col">预到达时间</th>
+                            <th scope="col">订单生成时间</th>
+                            <th scope="col">是否已发货</th>
+                            <th scope="col">是否已收到货</th>
+                            <th scope="col">备注</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" id="trCode">1</th>
+                            <td>苹果</td>
+                            <td>12箱</td>
+                            <td>汽车</td>
+                            <td>张三</td>
+                            <td>17550315804</td>
+                            <td>河南省平顶山市平职学院</td>
+                            <td>2023-5-14</td>
+                            <td>2023-5-17</td>
+                            <td>2023-5-14-11:00</td>
+                            <td>是</td>
+                            <td>是</td>
+                            <td>请快速送达</td>
+                            <td><button class="btn btn-primary">修改</button><button class="btn btn-danger">删除</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="trCode">2</th>
+                            <td>苹果</td>
+                            <td>12箱</td>
+                            <td>汽车</td>
+                            <td>张三</td>
+                            <td>17550315804</td>
+                            <td>河南省平顶山市平职学院</td>
+                            <td>2023-5-14</td>
+                            <td>2023-5-17</td>
+                            <td>2023-5-14-11:00</td>
+                            <td>是</td>
+                            <td>是</td>
+                            <td>请快速送达</td>
+                            <td><button class="btn btn-primary">修改</button><button class="btn btn-danger">删除</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="trCode">3</th>
+                            <td>苹果</td>
+                            <td>12箱</td>
+                            <td>汽车</td>
+                            <td>张三</td>
+                            <td>17550315804</td>
+                            <td>河南省平顶山市平职学院</td>
+                            <td>2023-5-14</td>
+                            <td>2023-5-17</td>
+                            <td>2023-5-14-11:00</td>
+                            <td>是</td>
+                            <td>是</td>
+                            <td>请快速送达</td>
+                            <td><button class="btn btn-primary">修改</button><button class="btn btn-danger">删除</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/plug/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="../res/js/plug/echarts.common.min.js"></script>
+    <script type="text/javascript" src="../res/js/work/pageIndex.js"></script>
+</body>
+<script>
+    // 获取tbody
+    let tbody1 = document.querySelector("tbody");
+    // 获取tbody下的所有的tr；
+    let trAll = tbody1.querySelectorAll("tr");
+    // 获取搜索框中的订单编号；
+    let indentCode = document.querySelector("#indentCode");
+    // 获取搜索按钮；
+    let searchCode = document.querySelector("#searchCode");
+
+    // 定义订单编号数组
+    let arrIndent = [1, 2, 3];
+    searchCode.onclick = () => {
+        // 给搜索按钮添加点击事件。
+        if (indentCode.value != 0 && arrIndent.indexOf(Number(indentCode.value)) != -1) {
+            for (let i = 0; i < trAll.length; i++) {
+                trAll[i].style.display = 'none';
+                // trAll[i].style.backgroundColor = 'gray';
+
+            }
+            trAll[indentCode.value - 1].style.display = '';
+        } else if (indentCode.value === '') {
+            for (let i = 0; i < trAll.length; i++) {
+                trAll[i].style.display = '';
+                // console.log(trAll[i]);
+            }
+        } else if (arrIndent.indexOf(Number(indentCode.value)) === -1) {
+            alert('您输入的订单编号不存在！');
+            indentCode.value = '';
+
+        }
+    }
+</script>
+
+</html>

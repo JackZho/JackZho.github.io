@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Webpixels">
+    <title>查件-牛马快递</title>
+    <link rel="stylesheet" href="../res/css/all.min.css">
+    <link rel="stylesheet" href="../res/css/main.css" id="stylesheet">
+    <style>
+        #bannerimg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #navbar-logo {
+            width: 63%;
+            height: 2%;
+            /* margin-left: -26%; */
+        }
+        
+        .nav-link:hover,
+        .caidan {
+            color: white !important;
+        }
+        
+        .searcha>nav>div>form {
+            margin: 0 auto;
+            /* width: 60%; */
+        }
+        
+        .inestor-email {
+            display: block;
+            font-size: 18px;
+            color: #0B0B0B;
+            padding-left: 36px;
+            height: 40px;
+            line-height: 40px;
+            background: url(../res/img/email.png) left center no-repeat;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        
+        .fill-section-secondary {
+            fill: #171347 !important;
+        }
+        
+        .lbdtb {
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .servewl,
+        #shal {
+            background: url(../res/img/module-1.png) no-repeat #0D1730;
+            background-size: 100% auto;
+            padding-bottom: 60px;
+            padding-top: 50px;
+        }
+        
+        .lbxtp {
+            border: none;
+            background-color: rgba(255, 255, 255, 0);
+        }
+        
+        #u1 {
+            list-style: none;
+        }
+        
+        .li1 {
+            margin: 2%;
+        }
+        
+        .col-lg-5 {
+            padding-right: 0px;
+        }
+        
+        .report-con li span:nth-child(2) b {
+            color: #0279FF;
+            padding-left: 20px;
+            cursor: pointer;
+            background-image: url(../imgs/investorRelations/download_ico.png);
+            background-repeat: no-repeat;
+            background-position: 0 center;
+        }
+        
+        .dropright .dropdown-toggle::after {
+            content: "》";
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .yzm {
+            background: url(../res/img/yzmbg.png);
+            font-size: 1rem;
+            color: rgb(65, 54, 54);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-success  ">
+        <div class="container">
+            <!-- 左侧logo -->
+            <a class="navbar-brand" href="index.html">
+                <img alt="Image placeholder" src="../res/img/1.png" id="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 导航子内容 -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html">首页</a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a class="nav-link" href="#wlfwwb" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">物流服务</a>
+                        <div class="dropdown-menu dropdown-menu-single">
+                            <a href="./expressCheck.html" class="dropdown-item">查快递</a>
+                            <a href="./create.html" class="dropdown-item">寄快递</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">服务支持</a>
+                        <div class="dropdown-menu dropdown-menu-single">
+
+                            <a href="./help.html" class="dropdown-item">帮助与反馈</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">合作共生</a>
+                        <div class="dropdown-menu dropdown-menu-single">
+                            <a href="./expressOutlets.html" class="dropdown-item">网点加盟</a>
+                            <a href="./nmEcology.html" class="dropdown-item">牛马生态</a>
+
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="./investorCN.html">投资者关系</a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-animate" data-toggle="hover">
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">关于我们</a>
+                        <div class="dropdown-menu dropdown-menu-single">
+                            <a href="./about.html" class="dropdown-item">企业概述</a>
+                            <a href="contactUs.html" class="dropdown-item">联系我们</a>
+
+                        </div>
+                    </li>
+                </ul>
+                <!-- Button -->
+                <a class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" href="./login.html">
+                    管理员登录
+                </a>
+
+                <!-- Mobile button -->
+                <div class="d-lg-none text-center">
+                    <a href="./login.html" class="btn btn-block btn-sm btn-primary">管理员登录</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- 上部图片 -->
+    <div class="banner"><img src="../res/img/express_banner.jpg" id="bannerimg" alt=""></div>
+    <!-- 主要内容 -->
+    <section class="slice pt-0 bg">
+        <div class="container-fluid">
+            <div class="row row-grid justify-content-between align-items-center ">
+
+                <!-- 中间内容 -->
+                <div class="col-lg-5 order-lg-2 ">
+                    <p>
+                        <a class="btn btn-primary numcheck" data-toggle="collapse" href="#numcheck" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          运单号查询
+                        </a>
+                        <button class="btn btn-primary phonecheck" type="button" data-toggle="collapse" data-target="#phonecheck" aria-expanded="false" aria-controls="collapseExample">
+                          手机号查询
+                        </button>
+                    </p>
+                    <div class="collapse show" id="numcheck">
+                        <div class="card card-body bg-light">
+                            <textarea name="" id="" cols="20" rows="3" placeholder="输入1个或最多10个运单号（多个请用；隔开）"></textarea>
+                        </div>
+                        <button class="btn btn-success">查询</button>
+
+                    </div>
+                    <div class="collapse " id="phonecheck">
+                        <div class="card card-body bg-light">
+                            <form id="formData " class="form-horizontal ">
+                                <div class="modal-body ">
+
+                                    <!-- 手机号 -->
+                                    <div class="form-group row">
+                                        <label for="phone" class="col-sm-2 col-form-label">手机号：</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="phone">
+                                        </div>
+                                    </div>
+                                    <!-- 图形验证码 -->
+                                    <div class="input-group mb-3">
+                                        <label for="phone" class="col-sm-3 col-form-label">图形验证码：</label>
+
+                                        <input type="text" class="form-control" placeholder="请输入图形验证码：" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text yzm" id="basic-addon2 "></span>
+                                        </div>
+                                    </div>
+                                    <!-- 手机验证码 -->
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-secondary" style="    color: #718096;">验证码：</span>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="请输入验证码">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text bg-warning text-white">获取验证码</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <button class="btn btn-success">查询</button>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 右侧内容 -->
+                <div class=" col-lg-3 order-lg-2 bg-light ">
+                    <h3>单号订阅</h3>
+                    <div class="card text-center" style="width: 18rem;">
+                        <div class="card-body">
+                            <p class="card-text">想要实时追踪此运单状态？扫码订阅，仅需一步!
+
+                            </p>
+
+                            <img src="../res/img/WX.jpg" class="card-img-top" alt="">
+                            <p class="card-text">打开微信扫描上方二维码即可订阅成功</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 左侧导航栏 -->
+                <div class="col-lg-3 order-lg-1 ">
+                    <div class="card mb-0 mr-lg-5 ">
+                        <div class="card-body p-2 ">
+                            <h1 class="text-center">客户服务</h1>
+                            <ul id="u1">
+                                <li class="li1">
+                                    <div class="dropright">
+                                        <a class="btn btn-primary dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                     寄件服务
+                                    </a>
+
+
+                                    </div>
+                                </li>
+                                <li class="li1">
+                                    <div class="dropright show">
+                                        <a class="btn btn-primary dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                      查询服务
+                                    </a>
+                                        <div class="dropdown-menu show">
+                                            <a class="dropdown-item active" href="#">查件(物流追踪)</a>
+                                            <a class="dropdown-item" href="#">服务网点查询</a>
+                                            <a class="dropdown-item" href="#">运费时效查询</a>
+                                            <a class="dropdown-item" href="#">违禁品查询</a>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="li1">
+                                    <div class="dropright">
+                                        <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                      客服支持
+                                    </a>
+
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">常见问题</a>
+                                            <a class="dropdown-item" href="#">投诉建议</a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="position-relative " id="footer-main ">
+        <div class="footer pt-lg-7 footer-dark bg-dark ">
+            <!-- SVG形状 -->
+            <div class="shape-container shape-line shape-position-top shape-orientation-inverse ">
+                <svg width="2560px " height="100px " xmlns="http://www.w3.org/2000/svg " xmlns:xlink="http://www.w3.org/1999/xlink " preserveAspectRatio="none " x="0px " y="0px " viewBox="0 0 2560 100 " style="enable-background:new 0 0 2560 100;
+                            " xml:space="preserve " class=" fill-section-secondary ">
+                    <polygon points="2560 0 2560 100 0 100 "></polygon>
+                </svg>
+            </div>
+            <!-- Footer -->
+            <div class="container pt-4 ">
+                <div class="row ">
+                    <div class="col-lg-4 mb-5 mb-lg-0 ">
+                        <!--  -->
+                        <a href="index.html ">
+                            <img alt="Image placeholder " src="../res/img/logo_footer.png " id="footer-logo">
+                        </a>
+                        <!-- 公司位置、邮编 -->
+                        <p class="mt-4 text-sm opacity-8 pr-lg-4 ">总部地址：上海市青浦区华新镇华志路 1685 号</p>
+                        <p class="mt-4 text-sm opacity-8 pr-lg-4 ">邮政编码：201708</p>
+                        <!-- 联系方式 -->
+                        <ul class="nav mt-4 ">
+                            <li class="nav-item ">
+                                <a class="nav-link pl-0 " href=" " target="_blank ">
+                                    <svg xmlns="http://www.w3.org/2000/svg " width="32 " height="32 " fill="currentColor " class="bi bi-sina-weibo " viewBox="0 0 16 16 ">
+                                        <path d="M10.878 1.093a4.23 4.23 0 0 1 4.031 1.305 4.225 4.225 0 0 1 .886 4.14v.001a.612.612 0 0 1-1.166-.377 3.01 3.01 0 0 0-3.495-3.873.611.611 0 1 1-.256-1.196Z "/>
+                                        <path fill-rule="evenodd " d="M3.753 9.465c.548-1.11 1.972-1.74 3.233-1.411 1.304.338 1.971 1.568 1.437 2.764-.541 1.221-2.095 1.875-3.416 1.449-1.271-.411-1.812-1.67-1.254-2.802Zm2.658.567c.16.066.365-.009.458-.168.088-.16.03-.34-.129-.397-.156-.062-.353.013-.446.168-.09.154-.041.333.117.397Zm-1.607
+                            1.314c.413.188.963.009 1.219-.4.252-.413.12-.883-.296-1.062-.41-.172-.94.005-1.194.402-.256.4-.135.874.271 1.06Z "/>
+                                        <path fill-rule="evenodd " d="m12.014 7.238.005.001c.919.285 1.941.974 1.939 2.188 0 2.007-2.895 4.535-7.246 4.535C3.393 13.962 0 12.352 0 9.708c0-1.385.876-2.985 2.384-4.493C4.4 3.199 6.751 2.28 7.634 3.165c.39.392.427
+                            1.065.177 1.87-.132.405.38.182.38.182 1.63-.682 3.051-.722 3.57.02.278.397.252.951-.004 1.594-.116.293.035.34.257.407Zm-10.4 3.101c.172 1.738 2.46 2.936 5.109 2.674 2.647-.26 4.656-1.883 4.482-3.623-.17-1.738-2.458-2.937-5.107-2.674-2.647.263-4.656
+                            1.883-4.484 3.623Z "/>
+                                        <path d="M13.295 3.855a2.056 2.056 0 0 0-1.962-.634.526.526 0 1 0 .219 1.031 1.008 1.008 0 0 1 1.17 1.296.528.528 0 0 0 1.005.325 2.062 2.062 0 0 0-.432-2.018Z "/>
+                                      </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href=" " target="_blank ">
+                                    <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-wechat " viewBox="0 0 16 16 ">
+                                        <path d="M11.176 14.429c-2.665 0-4.826-1.8-4.826-4.018 0-2.22 2.159-4.02 4.824-4.02S16 8.191 16 10.411c0 1.21-.65 2.301-1.666 3.036a.324.324 0 0 0-.12.366l.218.81a.616.616 0 0 1 .029.117.166.166 0 0 1-.162.162.177.177
+                            0 0 1-.092-.03l-1.057-.61a.519.519 0 0 0-.256-.074.509.509 0 0 0-.142.021 5.668 5.668 0 0 1-1.576.22ZM9.064 9.542a.647.647 0 1 0 .557-1 .645.645 0 0 0-.646.647.615.615 0 0 0 .09.353Zm3.232.001a.646.646 0 1 0 .546-1 .645.645 0 0
+                            0-.644.644.627.627 0 0 0 .098.356Z "/>
+                                        <path d="M0 6.826c0 1.455.781 2.765 2.001 3.656a.385.385 0 0 1 .143.439l-.161.6-.1.373a.499.499 0 0 0-.032.14.192.192 0 0 0 .193.193c.039 0 .077-.01.111-.029l1.268-.733a.622.622 0 0 1 .308-.088c.058 0 .116.009.171.025a6.83
+                            6.83 0 0 0 1.625.26 4.45 4.45 0 0 1-.177-1.251c0-2.936 2.785-5.02 5.824-5.02.05 0 .1 0 .15.002C10.587 3.429 8.392 2 5.796 2 2.596 2 0 4.16 0 6.826Zm4.632-1.555a.77.77 0 1 1-1.54 0 .77.77 0 0 1 1.54 0Zm3.875 0a.77.77 0 1 1-1.54
+                            0 .77.77 0 0 1 1.54 0Z "/>
+                                      </svg>
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href=" " target="_blank ">
+                                    <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-alipay " viewBox="0 0 16 16 ">
+                                        <path d="M2.541 0H13.5a2.551 2.551 0 0 1 2.54 2.563v8.297c-.006 0-.531-.046-2.978-.813-.412-.14-.916-.327-1.479-.536-.303-.113-.624-.232-.957-.353a12.98 12.98 0 0 0 1.325-3.373H8.822V4.649h3.831v-.634h-3.83V2.121H7.26c-.274
+                            0-.274.273-.274.273v1.621H3.11v.634h3.875v1.136h-3.2v.634H9.99c-.227.789-.532 1.53-.894 2.202-2.013-.67-4.161-1.212-5.51-.878-.864.214-1.42.597-1.746.998-1.499 1.84-.424 4.633 2.741 4.633 1.872 0 3.675-1.053 5.072-2.787 2.08 1.008
+                            6.37 2.738 6.387 2.745v.105A2.551 2.551 0 0 1 13.5 16H2.541A2.552 2.552 0 0 1 0 13.437V2.563A2.552 2.552 0 0 1 2.541 0Z "/>
+                                        <path d="M2.309 9.27c-1.22 1.073-.49 3.034 1.978 3.034 1.434 0 2.868-.925 3.994-2.406-1.602-.789-2.959-1.353-4.425-1.207-.397.04-1.14.217-1.547.58Z "/>
+                                      </svg> </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href=" " target="_blank ">
+                                    <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-whatsapp " viewBox="0 0 16 16 ">
+                                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6
+                            2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592
+                            6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729
+                            0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z "/>
+                                      </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 col-sm-4 ml-lg-auto mb-5 mb-lg-0 ">
+                        <h6 class="heading mb-3 ">物流服务</h6>
+                        <ul class="list-unstyled ">
+                            <li><a href="# ">——</a></li>
+                            <li><a href="# ">标快</a></li>
+                            <li><a href="# ">普件</a></li>
+                            <li><a href="# ">大件</a></li>
+                            <li><a href="# ">多店直发</a></li>
+                            <li><a href="# ">港台&跨境快递</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0 ">
+                        <h6 class="heading mb-3 ">服务支持</h6>
+                        <ul class="list-unstyled ">
+                            <li><a href="# ">——</a></li>
+                            <li><a href="# ">查快递</a></li>
+                            <li><a href="# ">寄快递</a></li>
+                            <li><a href="# ">帮助与反馈</a></li>
+                            <li><a href="# ">查询网点服务</a></li>
+                            <li><a href="# ">查询运输时效</a></li>
+                            <li><a href="# ">查询违禁品</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-6 col-sm-4 mb-5 mb-lg-0 ">
+                        <h6 class="heading mb-3 ">合作共生</h6>
+                        <ul class="list-unstyled ">
+                            <li><a href="# ">网店加盟</a></li>
+                            <li><a href="# ">快递超市加盟</a></li>
+                            <li><a href="# ">供应商合作</a></li>
+                            <li><a href="# ">商务合作案例</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="divider divider-fade divider-dark my-4 ">
+                <div class="row align-items-center justify-content-md-between pb-4 ">
+                    <div class="col-md-6 ">
+                        <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0 ">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="# ">
+                                    已通过ISO27001:2013 信息安全认证
+                                </a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="# ">
+                                    牛马版权所有 
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="col-md-6 ">
+                        <div class="copyright text-sm font-weight-bold text-center text-md-left ">
+                            &copy; 2023 <a href="# " class="font-weight-bold " target="_blank ">牛马快递股份有限公司©版权所有</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script>
+            let footerLogo = document.getElementById("footer-logo");
+            let w1 = document.body.clientWidth; //网页可见区域宽
+            if (w1 < 412) {
+                footerLogo.style.width = "80%";
+            }
+        </script>
+    </footer>
+    <!-- Core JS  -->
+
+    <script src="../res/js/plug/jquery-3.2.1.slim.min.js "></script>
+
+    <script src="../res/js/plug/bootstrap.bundle.min.js "></script>
+
+
+
+</body>
+
+</html>

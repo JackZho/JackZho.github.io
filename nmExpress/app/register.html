@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../res/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: rgb(0, 150, 136);
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.7;
+            margin: 0;
+            text-align: left;
+            color: #718096;
+        }
+        
+        svg {
+            overflow: hidden;
+            vertical-align: middle;
+        }
+        
+        .feather {
+            width: 1em;
+            height: 1em;
+            fill: none;
+            stroke: currentcolor;
+            stroke-width: 3px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .svgTb {
+            width: 58px;
+            height: 50px;
+            /* align-content: center; */
+            text-align: center;
+            vertical-align: middle;
+        }
+        
+        .input-group-text {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            display: flex;
+            margin-bottom: 0;
+            padding: 0.75rem 1.25rem;
+            text-align: center;
+            white-space: nowrap;
+            color: #a0aec0;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.375rem;
+            background-color: #fafbfe;
+            align-items: center;
+        }
+        
+        .text-underline--dashed {
+            text-decoration: none;
+            border-bottom: 1px dashed !important;
+        }
+        
+        .btn {
+            position: relative;
+            transition: all .2s ease;
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        #canvas {
+            width: 8rem;
+            height: 3rem;
+            display: inline-block;
+            border: 1px solid #c9c9c9;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body class="bg-primary">
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-cookies" data-backdrop="false" aria-labelledby="modal-cookies" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-aside left-4 right-4 bottom-4">
+            <div class="modal-content bg-dark-dark">
+                <div class="modal-body">
+                    <!-- Text -->
+                    <p class="text-sm text-white mb-3">
+                        We use cookies so that our themes work for you. By using our website, you agree to our use of cookies.
+                    </p>
+                    <!-- Buttons -->
+                    <a href="pages/utility/terms.html" class="btn btn-sm btn-white" target="_blank">Learn more</a>
+                    <button type="button" class="btn btn-sm btn-primary mr-2" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main content -->
+    <section>
+        <div class="container d-flex flex-column">
+            <div class="row align-items-center justify-content-center min-vh-100">
+                <div class="col-md-6 col-lg-5 col-xl-5 py-6 py-md-0">
+                    <div class="card shadow zindex-100 mb-0">
+                        <div class="card-body px-md-5 py-5">
+                            <div class="mb-5">
+                                <h6 class="h3">注册</h6>
+                                <p class="text-muted mb-0">请输入你的信息进行注册.</p>
+                            </div>
+                            <span class="clearfix"></span>
+                            <form>
+                                <div class="form-group">
+                                    <label class="form-control-label">账号</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend svgTb">
+                                            <span class="input-group-text svgTb">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                                <i data-feather="user">
+                                            </i></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="username" placeholder="username">
+                                    </div>
+                                </div>
+                                <!--密码  -->
+                                <div class="form-group mb-0">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <label class="form-control-label">密码</label>
+                                        </div>
+                                        <div class="mb-2">
+                                            <a href="#" id="showPass" class="small text-muted text-underline--dashed border-primary" data-toggle="password-text" data-target="#input-password">显示密码</a>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i data-feather="key">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-key"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
+                                            </i></span>
+                                        </div>
+                                        <input type="password" class="form-control" id="password" placeholder="password">
+                                    </div>
+                                </div>
+                                <!--验证码  -->
+                                <div class="form-group mb-0">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <label class="form-control-label">验证码</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i data-feather="key">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-check" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493a.5.5 0 1 0-.858-.514l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226Z"/>
+                                                <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z"/>
+                                              </svg>
+                                        </i></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="checkCode" placeholder="checkCode">
+                                        <div class="input-group-append col-sm-4">
+
+                                            <canvas id="canvas"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="mt-4">
+                                    <button type="button" class="btn btn-block btn-primary" id="denglu">注册</button></div>
+                            </form>
+                        </div>
+                        <div class="card-footer px-md-5"><small>注册完成?</small>
+                            <a href="./login.html" class="small font-weight-bold">点我登录</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+<script>
+    let showPass = document.querySelector('#showPass');
+
+    // 显示密码
+    let a = 1;
+    showPass.onclick = () => {
+        if (a == 1) {
+            password.type = 'text';
+            showPass.innerHTML = `隐藏密码`;
+            a = 2;
+        } else if (a = 2) {
+            password.type = 'password';
+            showPass.innerHTML = `显示密码`;
+            a = 1;
+        }
+    }
+
+    //验证码生成
+    let canvas = document.getElementById('canvas') //画布对象
+
+    let show_num = [] //装验证码的数组
+        //产生随机颜色
+    function randomColor() {
+        var r = Math.floor(Math.random() * 256);
+        var g = Math.floor(Math.random() * 256);
+        var b = Math.floor(Math.random() * 256);
+        return "rgb(" + r + "," + g + "," + b + ") "
+    }
+    //画布
+    function draw(show_num) {
+        let canvas_clientWidth = document.getElementById('canvas').clientWidth //画布长度
+        let canvas_clientHeight = document.getElementById('canvas').clientHeight //画布高度
+        let context = canvas.getContext("2d") //画布环境 创建 context 对象：
+        canvas.width = canvas_clientWidth
+        canvas.height = canvas_clientHeight
+        let str = "A,B,C,E,F,G,H,J,K,L,M,N,P,Q,R,S,T,W,X,Y,Z,1,2,3,4,5,6,7,8,9,0,q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,z,x,c,v,b,n,m";
+        let astr = str.split(','); //分割字符串形成数组
+        let sLength = astr.length; //数组长度
+        for (let i = 0; i <= 3; i++) {
+            let j = Math.floor(Math.random() * sLength); //随机索引
+            let deg = Math.random() * 30 * Math.PI / 180; //0-30随机弧度
+            let text = astr[j]; //随机字符
+            show_num[i] = text //验证码字符数组
+            let x = 10 + i * 20 //x坐标
+            let y = 20 + Math.random() * 8 //y坐标
+                //位移 旋转角度 颜色 文字 样式开始位置
+            context.font = 'bold 23px 微软雅黑'
+            context.translate(x, y);
+            context.rotate(deg);
+            context.fillStyle = randomColor();
+            context.fillText(text, 0, 0)
+            context.rotate(-deg)
+            context.translate(-x, -y)
+        }
+        //验证码显示小点
+        for (let i = 0; i <= 30; i++) {
+            context.strokeStyle = randomColor() //设置随机色用小点的颜色
+            context.beginPath(); //开始一条路径
+            let m = Math.random() * canvas_clientWidth;
+            let n = Math.random() * canvas_clientHeight;
+            context.moveTo(m, n) //移动
+            context.lineTo(m + 1, n + 1); //添加一个新点，然后在画布中创建从该点到最后指定点的线条
+            context.stroke(); //画上面定义好的路径
+        }
+        //验证码显示线条
+        for (let i = 0; i < 8; i++) {
+            context.strokeStyle = randomColor()
+            context.beginPath()
+            context.moveTo(Math.random() * canvas_clientWidth, Math.random() * canvas_clientHeight);
+            context.lineTo(Math.random() * canvas_clientWidth, Math.random() * canvas_clientHeight)
+            context.stroke()
+
+        }
+
+    }
+    draw(show_num)
+        // console.log(show_num);
+    let checkcode1 = show_num.join('');
+
+
+    canvas.onclick = () => {
+        draw(show_num)
+            // console.log(show_num);
+        checkcode1 = show_num.join('');
+
+    }
+
+    // 遍历取出验证码
+    // let checkcode = show_num[0] + show_num[1] + show_num[2] + show_num[3];
+
+
+
+    // console.log(res);
+
+
+    // 获取用户名、密码的输入框以及提交按钮、验证码、验证码输入框、显示密码
+    let username = document.querySelector('#username');
+    let password = document.querySelector('#password');
+    let denglu = document.querySelector('#denglu');
+    let checkCode = document.querySelector('#checkCode');
+
+    // 设置注册验证。
+    denglu.addEventListener('click', () => {
+        if (username.value != null && password.value != null && checkCode.value.toLowerCase() == checkcode1.toLowerCase()) {
+
+            localStorage.setItem('uname1', username.value);
+            localStorage.setItem('upass1', password.value);
+            alert('注册成功！')
+            clearMessage();
+            window.open('./login.html', '_self');
+        } else if (username.value === null || password.value === null || checkCode.value.toLowerCase() != checkcode1.toLowerCase()) {
+            alert('信息输入错误，请重新输入！');
+            clearMessage();
+            canvas.click();
+
+        }
+
+    })
+
+    const clearMessage = () => {
+        username.value = ``;
+        password.value = ``;
+        checkCode.value = ``;
+    }
+</script>
+
+
+</html>

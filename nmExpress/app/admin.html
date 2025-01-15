@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>牛马信息管理系统</title>
+    <link rel="stylesheet" type="text/css" href="../res/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/index.css">
+</head>
+
+<body>
+    <!-- 顶部栏 -->
+    <nav class="navbar navbar-expand navbar-dark bg-success fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">牛马物流</a>
+            <i class="iconfont index-control">&#xe63d;</i>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          用户操作
+		        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">个人中心</a>
+                            <div class="dropdown-divider"></div>
+                            <!-- <a class="dropdown-item bg-danger" href="#" id="exit1">退出</a> -->
+                            <button class="dropdown-item btn bg-danger" href="#" id="exit1">退出</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 中间区域内容 -->
+    <ul class="left-box">
+        <li class="active" data-url="page_index.html">
+            <i class="iconfont">&#xe613;</i>首页
+        </li>
+        <li data-url="page_user.html">
+            <i class="iconfont">&#xe68c;</i>客户信息
+        </li>
+        <li data-url="page_search.html">
+            <i class="iconfont">&#xe74f;</i>订单查询
+        </li>
+        <li data-url="page_data.html">
+            <i class="iconfont">&#xe676;</i>数据面板
+        </li>
+        <li data-url="page_tip.html">
+            <i class="iconfont">&#xe611;</i>提醒事项<span class="ml-3 badge badge-pill badge-warning" id="tixing">4</span>
+        </li>
+    </ul>
+    <div class="right-box">
+        <iframe src="page_index.html"></iframe>
+    </div>
+    <script type="text/javascript" src="../res/js/plug/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="../res/js/plug/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../res/js/work/index.js"></script>
+    <script>
+        let exit1 = document.querySelector('#exit1');
+        exit1.onclick = () => {
+            window.open('index.html', '_self');
+        }
+
+        let timer = setInterval(upNumber, 1000);
+
+        function upNumber() {
+            let l1 = localStorage.getItem('tLength');
+            // 获取提醒数字
+            let tixing = document.querySelector('#tixing');
+            tixing.innerHTML = l1;
+        }
+        // upNumber();
+    </script>
+</body>
+
+</html>

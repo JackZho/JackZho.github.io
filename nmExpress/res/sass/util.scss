@@ -1,0 +1,7 @@
+@mixin rotateY( $angle ){
+	transform: rotateY( $angle );
+	-ms-transform: rotateY( $angle );
+	-moz-transform: rotateY( $angle );
+	-webkit-transform: rotateY( $angle );
+	-o-transform: rotateY( $angle );
+}

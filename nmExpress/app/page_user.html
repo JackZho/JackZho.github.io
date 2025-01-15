@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>用户中心</title>
+    <link rel="stylesheet" type="text/css" href="../res/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../res/css/pageIndex.css">
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">客户中心</li>
+        </ol>
+    </nav>
+    <div class="container-fluid">
+        <div class="row mb-4 pt-2">
+            <div class="col-12">
+                <form>
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <label class="sr-only" for="userName">客户编号</label>
+                            <input type="text" class="form-control mb-2" id="userName" placeholder="请输入客户编号">
+                        </div>
+
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-2" id="an">搜索</button>
+                            <button type="submit" class="btn btn-primary mb-2">添加客户</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped table-bordered table-hover text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">客户编号</th>
+                            <th scope="col">姓名</th>
+                            <th scope="col">电话</th>
+                            <th scope="col">地址</th>
+                            <th scope="col">邮箱</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>12334567890</td>
+                            <td>平职学院</td>
+                            <td>1234@qq.com</td>
+                            <td><button class="btn btn-primary">修改</button><button class="btn btn-danger">删除</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>12334567890</td>
+                            <td>平职学院</td>
+                            <td>1234@qq.com</td>
+                            <td><button class="btn btn-primary">修改</button><button class="btn btn-danger">删除</button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Mark</td>
+                            <td>12334567890</td>
+                            <td>平职学院</td>
+                            <td>1234@qq.com</td>
+                            <td><button class="btn btn-primary">修改</button><button class="btn btn-danger">删除</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../res/js/plug/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="../res/js/plug/echarts.common.min.js"></script>
+    <script type="text/javascript" src="../res/js/work/pageIndex.js"></script>
+    <!-- 搜索 -->
+    <script type="text/javascript">
+        window.onload = function() {
+            // 定义一个1-100的数组
+            var searchList = new Array(100);
+            for (var i = 0; i < searchList.length; i++) {
+                searchList[i] = i;
+            }
+
+            //定义原始数据
+            //获取ul
+            var oul = document.getElementById("conter");
+            //搜索按钮的点击事件
+            document.getElementById("an").onclick = function() {
+                //获取input框的value值
+                var inputcom = document.getElementById("input-com").value;
+                //定义新数组，保存符合搜索内容要求的数据
+                var a = [];
+                var k = 0;
+                //循环判断符合要求的数据
+                for (var j = 0; j < searchList.length; j++) {
+                    //数据中不包含搜索内容值的返回-1
+                    if (searchList[j].indexOf(inputcom) != -1) {
+                        a[k++] = searchList[j];
+                    }
+                }
+                //清空ul里面的内容
+                document.getElementById("conter").innerHTML = "";
+                //循环将数据输出到ul下
+                for (var p = 0; p < a.length; p++) {
+                    //创建li
+                    let oli = document.createElement("li");
+                    //定义li里的内容
+                    oli.innerHTML = a[p];
+                    //将li添加到ul里
+                    oul.appendChild(oli);
+                }
+            };
+            //循环将数据渲染到ul下
+            for (var i = 0; i < searchList.length; i++) {
+                let oli = document.createElement("li");
+                oli.innerHTML = searchList[i];
+                oul.appendChild(oli);
+            }
+        }
+    </script>
+</body>
+
+</html>
